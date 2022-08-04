@@ -1,0 +1,36 @@
+---
+title: "Day 4 - Exploring Data"
+author: "Adelaide Robinson"
+format: html
+editor: visual
+---
+
+## 
+Code chunk options  #| warning: false
+
+
+```{r}
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(GGally)
+library(skimr)
+```
+
+# Exploratory Data Visualization
+
+```{r}
+#| include: false
+# Tell me the column names 
+names(penguins)
+# What are the dimension
+dim(penguins)
+#can you show me the first six lines 
+head(penguins)
+#can you show me the last 6 lines?
+tail(penguins)
+
+```
+
