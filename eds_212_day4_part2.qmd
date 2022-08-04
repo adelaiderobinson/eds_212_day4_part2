@@ -6,7 +6,7 @@ editor: visual
 ---
 
 ## 
-Code chunk options  #| warning: false
+Code chunk options 
 
 
 ```{r}
@@ -32,5 +32,31 @@ head(penguins)
 #can you show me the last 6 lines?
 tail(penguins)
 
+```
+
+```{r}
+skim(penguins)
+```
+
+```{r}
+#you can use this to be explicit about what package is being used 
+#pulls up overview summary grid with tons of graphs
+GGally :: ggpairs(penguins)
+```
+### Jitterplot
+flipper length by species
+
+```{r}
+#only need to put within aes if it is related to a variable 
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + geom_jitter(width = 0.2,
+alpha = 0.5, aes(color = species)) + geom_boxplot(fill = NA) + theme_light() + scale_color_manual(values = c("darkorchid4", "cyan4", "goldenrod"))+ labs( title = "Palmer Archipelago penguin flippers", x = "Penguin Speices", y = "Flipper Length (mm)")
+#reduce the spread using width, alpha opacity + theme_light()
+
+```
+
+Histogram
+```{r}
+
+ggplot(data = penguins, aes(x = bill_length_mm)) + geom_histogram(aes(fill = species), color = "magenta")+ facet_wrap(~species, ncol = 1)
 ```
 
