@@ -6,8 +6,8 @@ editor: visual
 ---
 
 ## 
-Code chunk options 
 
+Code chunk options
 
 ```{r}
 #| warning: false
@@ -43,7 +43,9 @@ skim(penguins)
 #pulls up overview summary grid with tons of graphs
 GGally :: ggpairs(penguins)
 ```
+
 ### Jitterplot
+
 flipper length by species
 
 ```{r}
@@ -54,9 +56,9 @@ alpha = 0.5, aes(color = species)) + geom_boxplot(fill = NA) + theme_light() + s
 
 ```
 
-Histogram
+Histogram. minor change. 
+
 ```{r}
 
 ggplot(data = penguins, aes(x = bill_length_mm)) + geom_histogram(aes(fill = species), color = "magenta")+ facet_wrap(~species, ncol = 1)
 ```
-
